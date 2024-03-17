@@ -1,4 +1,3 @@
-## PotCoder
 ![PotCoder Screenshot](./src/potcoder/assets/potcoder-screenshot.png)
 
 ### How to use
