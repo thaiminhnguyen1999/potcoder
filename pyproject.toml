@@ -1,14 +1,22 @@
 [build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
 [project]
 name = "potcoder"
-authors = [{name = "Thai Minh Nguyen", email = "nguyenthaiminh0973200965@gmail.com"}]
+version = "1.2.2"
+authors = [
+  { name="Thai Minh Nguyen", email="nguyenthaiminh0973200965@gmail.com" },
+]
+description = "A module created for the Python language that makes programming easier for programmers and developers"
 readme = "README.md"
-license = {file = "LICENSE"}
-classifiers = ["License :: OSI Approved :: MIT License"]
-dynamic = ["version", "description"]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 
 [project.urls]
-Home = "https://github.com/thaiminhnguyen1999/potcoder"
+Homepage = "https://github.com/thaiminhnguyen1999/potcoder"
+Issues = "https://github.com/thaiminhnguyen1999/potcoder/issues"

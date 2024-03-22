@@ -1,5 +1,3 @@
-"""A module created for the Python language that makes programming easier for programmers and developers"""
-
 # Import modules
 import os
 import openai
@@ -10,7 +8,6 @@ load_dotenv()
 
 # Get the value of the environment variable "POTCODER-VERSION"
 potcoder_version = os.getenv("POTCODER-VERSION")
-__version__ = potcoder_version
 
 # Welcome message
 if potcoder_version is not None:
@@ -28,7 +25,7 @@ def cli():
     while True:
         usr_cmd = input("potcoder-1.2.2 >> ")
 
-        if "welcome" in usr_cmd:
+        if "hi" or "hello" in usr_cmd:
             print("potcoder-" + potcoder_version + " [RETURN] >> Thank you :)")
         elif "bye" in usr_cmd:
             print("potcoder-" + potcoder_version + " [RETURN] >> Good bye! :(")
@@ -36,11 +33,18 @@ def cli():
         elif usr_cmd == "info":
             print("potcoder-" + potcoder_version + " [RETURN] >> potcoder [v" + potcoder_version +"]. Made by Thai Minh Nguyen (@thaiminhnguyen1999)")
         elif usr_cmd == "help":
-            os.system("notepad cli-help.txt")
+            print("============================================================")
+            print("|                   PotCoder CLI V" + potcoder_version + "                    |")
+            print("============================================================")
+            print("\nCommands:")
+            print("info                  See information about PotCoder CLI")
+            print("help                  View available commands in PotCoder")
+            print("check-ver             Check and update PotCoder version")
+            print("exit                  Exit PotCoder CLI")
         elif usr_cmd == "check-ver":
             exec(open('check-ver.py').read())
         else:
-            print("potcoder-" + potcoder_version + " [RETURN] >> I don't understand what you are asking me to do (ˉ﹃ˉ)")
+            print("potcoder-" + potcoder_version + " [RETURN] >> I don't understand what you are asking me to do :)?")
 
 # ChatGPT built with Python [Usage: potcoder.pygpt([Your API Key], [Model ID], [Question like "Code: "], [Respond of ChatGPT like "GPT: "])]
 def pygpt(openai_api_key, openai_model_id, input_ques, respond_stc):

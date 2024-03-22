@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-file_url = 'https://raw.githubusercontent.com/thaiminhnguyen1999/potcoder/main/potcoder-ver.txt'
+file_url = 'https://raw.githubusercontent.com/thaiminhnguyen1999/potcoder/main/src/potcoder/potcoder-ver.txt'
 
 try:
     wget.download(file_url, 'potcoder-ver.txt')
@@ -19,4 +19,6 @@ if data == os.getenv("POTCODER-VERSION"):
     print(f"\nYou are using the latest version of potcoder [v{os.getenv('POTCODER-VERSION')}]")
 else:
     print(f"\nInstalling new potcoder version [v{data}]")
-    os.system("pip install potcoder -U")
+    os.system("git clone -b v" + data + " https://github.com/thaiminhnguyen1999/potcoder.git")
+    os.system("cd potcoder")
+    os.system("pip install potcoder-" + data + "-py3-none-any.whl")
